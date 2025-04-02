@@ -29,14 +29,60 @@
   src: url('./assets/fonts/Moon_Dance/MoonDance-Regular.ttf') format('truetype');
 
 }
+@font-face {
+  font-family: 'lato';
+  src: url('./assets/fonts/Lato/Lato-Regular.ttf');
+
+}
+@font-face {
+  font-family: 'monserat';
+  src: url('./assets/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf');
+
+}
 
 /* src/custom.css */
 .dark-mode .hero {
   @apply text-white bg-gradient-to-r from-[#0B0B2A] to-transparent;
 }
 
-.dark-mode .input {
-  @apply bg-[#222339] text-white
+.dark-mode .x {
+  @apply text-black
+}
+
+.dark-mode .footer {
+  @apply bg-[#222845]
+}
+
+.dark-mode .cards {
+  @apply text-[#dfdcdc]  border-[#cdd1e0] hover:border-[#3a5629]
+}
+
+.dark-mode .home {
+  @apply bg-[#0B0B2A] text-gray-500 h-full
+}
+
+.dark-mode .navbar {
+  @apply text-gray-300
+}
+.dark-mode .member {
+  @apply  text-white 
+}
+
+.dark-mode  .input {
+  @apply  text-white
+}
+.dark-mode .inputbg {
+  @apply   bg-[#222339] text-white
+}
+.dark-mode .recentbg {
+  @apply   bg-[#0B0B2A]
+}
+.dark-mode .testify {
+  @apply   bg-[#0B0B2A] text-white
+}
+
+.dark-mode .recent{
+  @apply bg-[#161722]
 }
 
 
@@ -45,6 +91,10 @@
 }
 
 .dark-mode .navbar .button {
+  @apply text-white;
+}
+
+.dark-mode .result {
   @apply text-white;
 }
 
