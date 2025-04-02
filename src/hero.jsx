@@ -21,7 +21,7 @@ const Hero = () => {
   };
   return (
 
-    <div className="  relative flex justify-center  items-center w-full h-[100vh] text-center overflow-x-hidden "
+    <div className="  relative flex justify-center   items-center w-full h-[100vh] text-center overflow-x-hidden "
       style={{
         backgroundImage: `url(${slide2})`,
         backgroundSize: 'cover',
@@ -30,7 +30,7 @@ const Hero = () => {
 
       }}><div className=" hero bg-gradient-to-r from-[#ffffff] to-transparent absolute inset-0 z-0"></div>
 
-      <div className='flex flex-col md:flex lg:flex xl:flex gap-3 absolute xl:botttom-[2rem] md:bottom-[4rem] md:left-[0.5rem] lg:bottom-[8rem] lg:left-[1rem] mx-[6.9rem] pt-32  z-10'>
+      <div className='flex flex-col md:flex lg:flex xl:flex gap-3 absolute xl:botttom-[2rem] md:bottom-[4rem] md:left-[0.5rem] lg:bottom-[8rem] lg:left-[1rem] mx-[3rem] xl:mx-[4rem] pt-32  z-10'>
 
         <p  className='border border-none text-sm lg:text-sm xl:text-[15px] rounded-sm pt-2 w-72 h-8 text-white bg-[#3A5829]'>Find your place in the future of farming </p>
 
@@ -46,7 +46,7 @@ const Hero = () => {
 
         </div>
 
-        <div className="bg-white  shadow-xl shadow-[#242323] rounded-md w-full h-[48vh] lg:w-[90vw] lg:h-[15vh] xl:w-[80vw] xl:h-[15vh] md:w-[80vw] md:h-[30vh] ">
+        <div className="bg-white inputbg  shadow-xl shadow-[#242323] rounded-md w-full h-[48vh] lg:w-[90vw] lg:h-[15vh] xl:w-[80vw] xl:h-[15vh] md:w-[80vw] md:h-[29vh] ">
 
           <div className="flex flex-col lg:grid lg:grid-cols-4 md:grid md:grid-cols-2 md:space-y-10 space-y-6 md:space-x-10 mx-10 my-6 ">
 
@@ -57,9 +57,9 @@ const Hero = () => {
                 placeholder="Job title,Keywords"
                 value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
-                className=" p-2 border-b-2 border-[#3a5829] w-60 lg:w-56 xl:w-66"
+                className=" p-2 border-b-2  border-[#3a5829] outline-none w-60 lg:w-56 xl:w-66"
               />
-              <Search className="absolute left-[14rem] lg:left-[13rem] top-3.5 xl:left-[15rem] text-[#3A5829] w-4 h-4 " />
+              <Search className="absolute left-[14rem]   lg:left-[13rem] top-3.5 xl:left-[15rem] text-[#3A5829] w-4 h-4 " />
             </div>
 
 
@@ -69,7 +69,7 @@ const Hero = () => {
                 placeholder="City, district or place"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                className=" p-2 border-b-2 border-[#3a5829] xl:w-66 w-60 lg:w-56 lg:ml-8"
+                className=" p-2 border-b-2 border-[#3a5829]  outline-none xl:w-66 w-60 lg:w-56 lg:ml-8"
               />
               <MapPin className="absolute left-[14rem] top-3.5  text-[#3A5829] w-4 h-4 xl:left-[17rem] " />
             </div>
@@ -77,7 +77,7 @@ const Hero = () => {
             <select
               value={sector}
               onChange={(e) => setSector(e.target.value)}
-              className="border-b-2 border-[#3a5829] w-60 lg:w-44 lg:ml-16 xl:w-48"
+              className="border-b-2 border-[#3a5829]   outline-none w-60 lg:w-44 lg:ml-16 xl:w-48"
             >
               <option value="">Select Sector</option>
               <option value="crop production">Crop Production</option>
