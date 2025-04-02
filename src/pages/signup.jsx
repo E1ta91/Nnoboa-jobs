@@ -4,13 +4,49 @@ import logo from '../assets/images/logo.png'
 import { useForm } from 'react-hook-form'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-  const { register, formState: { errors } } = useForm({ reValidateMode: "onBlur", mode: "all" });
+  const { register, handleSubmit, formState: { errors } } = useForm({ reValidateMode: "onBlur", mode: "all" });
+  const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const onSubmit = async (data) => {
+    try {
+      // Add user type to the data
+      const userData = {
+        ...data,
+        userType: 'jobseeker'
+      };
+
+      // Get existing users array or initialize if doesn't exist
+      const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
+
+      // Check if email already exists
+      if (existingUsers.some(user => user.email === data.email)) {
+        alert('An account with this email already exists');
+        return;
+      }
+
+      // Add new user to array
+      existingUsers.push({
+        email: data.email,
+        password: data.password,
+        userType: 'jobseeker',
+        fullName: data.fullName
+      });
+
+      // Save updated users array
+      localStorage.setItem('users', JSON.stringify(existingUsers));
+      
+      // Navigate to login page
+      navigate('/login');
+    } catch (error) {
+      console.error('Registration error:', error);
+    }
+  };
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -34,7 +70,7 @@ const Signup = () => {
             </h1>
 
             {/* Form */}
-            <form className='space-y-5'>
+            <form className='space-y-5' onSubmit={handleSubmit(onSubmit)}>
               {/* Full Name Input */}
               <div className='space-y-2 flex flex-col'>
                 <label htmlFor="name" className='text-[#3a5629] font-medium'>Full Name</label>
